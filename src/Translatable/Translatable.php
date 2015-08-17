@@ -384,10 +384,10 @@ trait Translatable
     {
         $attributes = parent::toArray();
 
-        $hidden = $this->getHidden();
+        $hiddenAttributes = $this->getHidden();
         
         foreach ($this->translatedAttributes as $field) {
-            if (in_array($field, $hidden)) {
+            if (in_array($field, $hiddenAttributes)) {
                 continue;
             }
             
