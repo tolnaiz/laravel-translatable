@@ -545,7 +545,7 @@ class TranslatableTest extends TestsBase
     /**
      * @test
      */
-    public function test_it_returns_if_attribute_is_translated()
+    public function it_returns_if_attribute_is_translated()
     {
         $country = new Country();
 
