@@ -541,4 +541,15 @@ class TranslatableTest extends TestsBase
         $results = $country->withTranslations(['name'])->orderBy("name")->get()->toArray();
         $this->assertArraySubset($list, $results);
     }
+
+    /**
+     * @test
+     */
+    public function test_it_returns_if_attribute_is_translated()
+    {
+        $country = new Country();
+
+        $this->assertTrue($country->isTranslationAttribute('name'));
+        $this->assertFalse($country->isTranslationAttribute('some-field'));
+    }
 }
