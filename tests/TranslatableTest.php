@@ -305,18 +305,6 @@ class TranslatableTest extends TestsBase
         $this->assertEquals(App::make('config')->get('translatable.translation_suffix'), 'Translation');
     }
 
-    public function test_translated_in_scope_returns_only_translated_records_for_this_locale()
-    {
-        $translatedCountries = Country::translatedIn('fr')->get();
-        $this->assertEquals($translatedCountries->count(), 1);
-    }
-
-    public function test_translated_scope_returns_records_with_at_least_one_translation()
-    {
-        $translatedCountries = Country::translated()->get();
-        $this->assertEquals($translatedCountries->count(), 2);
-    }
-
     public function test_getting_translation_does_not_create_translation()
     {
         $country = Country::with('translations')->find(1);
@@ -388,7 +376,6 @@ class TranslatableTest extends TestsBase
         $this->assertEquals($list, $country->listsTranslations('name')->get()->toArray());
     }
 
-<<<<<<< 219e54eb98c435b2cbb39d0196e91b5b5d7ebe2c
     /**
      * @test
      */
