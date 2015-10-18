@@ -499,7 +499,7 @@ trait Translatable
      *
      * @param Builder $query
      */
-    public function scopeWithTranslations(Builder $query)
+    public function scopeWithTranslation(Builder $query)
     {
         $query->with(['translations' => function($query){
             $query->where('locale', $this->locale());
